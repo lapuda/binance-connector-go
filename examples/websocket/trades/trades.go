@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	binance_connector "github.com/binance/binance-connector-go"
+	binance_connector "github.com/lapuda/binance-connector-go"
 )
 
 func main() {

@@ -1,6 +1,6 @@
 # Binance Spot Go Connector
 
-This is a lightweight library that works as a connector to [Binance public API](https://github.com/binance/binance-spot-api-docs)
+This is a lightweight library that works as a connector to [Binance public API](https://github.com/lapuda/binance-spot-api-docs)
 
 ## Supported API Endpoints:
 - Account/Trade: `account.go`
@@ -14,13 +14,13 @@ This is a lightweight library that works as a connector to [Binance public API](
 
 ## Installation
 ```shell
-go get github.com/binance/binance-connector-go
+go get github.com/lapuda/binance-connector-go
 ```
 
 To reference the package in your code, use the following import statement:
 ```golang
 import (
-    "github.com/binance/binance-connector-go"
+    "github.com/lapuda/binance-connector-go"
 )
 ```
 ## Authentication
@@ -52,7 +52,7 @@ import (
 	"context"
 	"fmt"
 
-	binance_connector "github.com/binance/binance-connector-go"
+	binance_connector "github.com/lapuda/binance-connector-go"
 )
 
 func main() {
@@ -105,7 +105,7 @@ import (
 	"fmt"
 	"time"
 
-	binance_connector "github.com/binance/binance-connector-go"
+	binance_connector "github.com/lapuda/binance-connector-go"
 )
 
 func main() {
@@ -145,7 +145,7 @@ import (
 	"fmt"
 	"time"
 
-	binance_connector "github.com/binance/binance-connector-go"
+	binance_connector "github.com/lapuda/binance-connector-go"
 )
 
 func main() {

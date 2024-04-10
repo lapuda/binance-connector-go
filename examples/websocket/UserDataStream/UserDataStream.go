@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	binance_connector "github.com/binance/binance-connector-go"
+	binance_connector "github.com/lapuda/binance-connector-go"
 )
 
 func main() {
@@ -12,12 +12,12 @@ func main() {
 }
 
 func WsUserData() {
-	apiKey := "your api key"
-	secretKey := "your secret key"
-	baseURL := "https://api.binance.com"
+	apiKey := "PaCw4ghVt10x2XVKiFNLOcLsMfyxqa1yBu9zNyZgSrpsrE8FpQAD68bKZNmymVuJ"
+	secretKey := "hEkHWCKWzsrq1VZZFWiJHfBEPTp4c5PpEZSBEeYKLWuZMF4z2wzLNDLG9X5DHtP4"
+	baseURL := "https://testnet.binance.vision"
 
 	client := binance_connector.NewClient(apiKey, secretKey, baseURL)
-
+	client.Debug = true
 	listenKey, err := client.NewCreateListenKeyService().
 		Do(context.Background())
 	if err != nil {
@@ -25,7 +25,7 @@ func WsUserData() {
 		return
 	}
 
-	websocketStreamClient := binance_connector.NewWebsocketStreamClient(false)
+	websocketStreamClient := binance_connector.NewWebsocketStreamClient(false, "wss://testnet.binance.vision")
 
 	wsUserDataHandler := func(event *binance_connector.WsUserDataEvent) {
 		fmt.Println(binance_connector.PrettyPrint(event))
