@@ -2,6 +2,7 @@ package binance_connector
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"time"
 
@@ -64,6 +65,12 @@ var wsServe = func(cfg *WsConfig, handler WsHandler, errHandler ErrHandler) (don
 		return nil, nil, err
 	}
 	c.SetReadLimit(655350)
+	// add return listenkey
+	err = c.WriteMessage(websocket.TextMessage, []byte("{ \"method\": \"SET_PROPERTY\", \"params\": [ \"combined\", true ], \"id\": 5 }"))
+	if err != nil {
+		log.Println("write:", err)
+		return
+	}
 	doneCh = make(chan struct{})
 	stopCh = make(chan struct{})
 	go func() {
